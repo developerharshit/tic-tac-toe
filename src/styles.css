@@ -1,0 +1,130 @@
+body {
+	margin: 0px;
+	background: black;
+}
+
+.header {
+	color: white;
+	text-align: center;
+	font-size: 50px;
+}
+.header p {
+	margin-top: 20px;
+}
+
+.board {
+	margin: auto;
+	margin-top: 0px;
+	width: 600px;
+	height: 600px;
+	margin-top: 5%;
+	display: flex;
+	flex-direction: row;
+	box-sizing: inherit;
+	flex-wrap: wrap;
+}
+
+.square {
+	padding: auto;
+	width: 33%;
+	height: 33%;
+	border-width: 5%;
+	border-color: #fff;
+	-webkit-transition: background-color 0.1s;
+	-moz-transition: background-color 0.1s;
+	transition: background-color 0.1s;
+	will-change: background-color, border-color;
+	cursor: pointer;
+}
+.left {
+	border-right-style: solid;
+}
+.right {
+	border-left-style: solid;
+}
+.bottom {
+	border-top-style: solid;
+}
+.top {
+	border-bottom-style: solid;
+}
+
+.square .o,
+.square .x {
+	position: relative;
+	will-change: transform;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-animation: appear 0.2s cubic-bezier(0.5, 1.8, 0.1, 1.1);
+	-moz-animation: appear 0.2s cubic-bezier(0.5, 1.8, 0.1, 1.1);
+	animation: appear 0.2s cubic-bezier(0.5, 1.8, 0.1, 1.1);
+}
+
+.x {
+	background-color: white;
+}
+
+.o {
+	left: 16.666666667%;
+	top: 16.666666667%;
+	width: 50%;
+	height: 50%;
+	border: 20px solid white;
+	border-radius: 50%;
+}
+
+.x::before,
+.x::after {
+	position: absolute;
+	content: "";
+	display: block;
+	background-color: inherit;
+	left: 90px;
+	margin: auto;
+	top: 20px;
+	width: 20px;
+	height: 160px;
+	border-radius: 4px;
+}
+
+.x::before {
+	transform: rotate(-45deg);
+}
+
+.x::after {
+	transform: rotate(45deg);
+}
+
+board .square > div {
+	-webkit-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	transition: opacity 0.1s;
+}
+
+.scores {
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.scores .player1,
+.scores .player2,
+.scores .ties,
+.scores .reset {
+	font: 30px "Raleway", sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: inline-block;
+	width: 25%;
+}
+
+.scores .reset {
+	color: cyan;
+	cursor: pointer;
+}
+
+.scores .score {
+	display: block;
+}
